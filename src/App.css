@@ -86,4 +86,37 @@
   width: 90%;
 }
   
+.pizza {
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.circle {
+  border: 1px solid black;
+  width: 285px;
+  height: 285px;
+  border-radius: 50%;
+}
+
+.circle2 {
+  border: 1px solid black;
+  width: 140px;
+  height: 285px;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.circle3 {
+  border: 1px solid black;
+  width: 140px;
+  height: 285px;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.half_half {
+  display: flex;
+}

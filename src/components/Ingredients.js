@@ -37,7 +37,7 @@ export default function Ingredients() {
         </div>
         <div className="box">
           <div>치즈</div>  
-          <div>치즈</div>  
+          <div>체다치즈</div>  
         </div>
         <div className="box">
           <div>검은 피망</div>  

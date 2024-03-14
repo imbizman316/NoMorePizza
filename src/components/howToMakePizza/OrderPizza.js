@@ -3,6 +3,7 @@ import React from "react";
 import Receipt from "../Receipt";
 import Dough from "../Dough";
 import Ingredients from "../Ingredients";
+import Pizza from "../Pizza";
 import '../../App.css'
 
 export default function OrderPizza() {
@@ -24,13 +25,29 @@ export default function OrderPizza() {
   const [menu2, setMenu2] = React.useState("치즈피자")
   const [count, setCount] = React.useState(1)
 
+  //-----------------------Assemble-----------------------
+  const [isSauce, setIsSauce] = React.useState(false)
+  const [isSauce2, setIsSauce2] = React.useState(false)
+  const [isLongCheese, setIsLongCheese] = React.useState(false)
+
   React.useEffect(()=>{
     setMenuData(Data)
   },[])
 
+  function handleSauce() {
+    setIsSauce(!isSauce)
+  }
+
+  function handleSauce2() {
+    setIsSauce2(!isSauce2)
+  }
+
+  function handleLongCheese() {
+    setIsLongCheese(!isLongCheese)
+  }
+
   return (
     <div>
-      
       <div>
         <select onChange={(e)=>setType(e.target.value)}>
           {/* {menu[0]["type"][0]} */}
@@ -89,9 +106,22 @@ export default function OrderPizza() {
         count={count}
       />
 
-      <Dough />
+      <Dough 
+        isSauce={isSauce}
+        isSauce2={isSauce2}
+        handleSauce={handleSauce}
+        handleSauce2={handleSauce2}
+        isLongCheese={isLongCheese}
+        handleIsLongCheese={handleLongCheese}
+      />
 
       <Ingredients />
+
+      <Pizza 
+        isSauce={isSauce}
+        isSauce2={isSauce2}
+        isLongCheese={isLongCheese}
+      />
     </div>
   )
 }
