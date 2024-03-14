@@ -1,4 +1,6 @@
-export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isLongCheese, handleIsLongCheese}) {
+import { isVisible } from "@testing-library/user-event/dist/utils";
+
+export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize}) {
 
   return (
     <div className="dough">
@@ -10,9 +12,15 @@ export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isL
         </div>
       <div className="right">
         <div className="tray">
-          <div>L</div>
-          <div>R</div>
-          <div>P</div>
+          <div name="L" onClick={(e)=>handleIsSize("L")}
+            style={{backgroundColor: isSize==="L" && "pink" }}
+          >L</div>
+          <div name="R" onClick={(e)=>handleIsSize("R")}
+            style={{backgroundColor: isSize==="R" && "pink" }}
+          >R</div>
+          <div name="P" onClick={(e)=>handleIsSize("P")}
+            style={{backgroundColor: isSize==="P" && "pink" }}
+          >P</div>
         </div>
         <div className="doughTable">
 
