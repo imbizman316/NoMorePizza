@@ -42,7 +42,13 @@ export default function OrderPizza() {
 
   React.useEffect(()=>{
     setIngredient(IngredientData)
+    setIsSauce(false)    
   },[menu1])
+
+  React.useEffect(()=>{
+    setIngredient(IngredientData)
+    setIsSauce2(false)    
+  },[menu2])
 
   function handleSauce() {
     
