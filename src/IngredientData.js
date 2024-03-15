@@ -11,12 +11,12 @@ const IngredientData = [
   },
   {
     id: 3,
-    title: "포테이토",
+    title: "웻지감자",
     isSelected: false,
   },
   {
     id: 4,
-    title: "불고기",
+    title: "바베큐불고기",
     isSelected: false,
   },
   {
@@ -41,12 +41,12 @@ const IngredientData = [
   },
   {
     id: 9,
-    title: "파파로니",
+    title: "페퍼로니",
     isSelected: false,
   },
   {
     id: 10,
-    title: "슈뤠디드미트",
+    title: "분쇄비프",
     isSelected: false,
   },
   {
@@ -56,7 +56,7 @@ const IngredientData = [
   },
   {
     id: 12,
-    title: "슈림프",
+    title: "시즈닝새우",
     isSelected: false,
   },
   {
@@ -91,7 +91,7 @@ const IngredientData = [
   },
   {
     id: 19,
-    title: "3종버섯",
+    title: "버섯4종",
     isSelected: false,
   },
   {
@@ -119,6 +119,16 @@ const IngredientData = [
     title: "연유",
     isSelected: false,
   },
+  {
+    id: 25,
+    title: "통옥수수",
+    isSelected: false,
+  },  
+  {
+    id: 26,
+    title: "콘마요",
+    isSelected: false,
+  },  
 ]
 
 export default IngredientData

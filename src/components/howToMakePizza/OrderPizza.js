@@ -19,7 +19,7 @@ export default function OrderPizza() {
     {id: 3, type:"P"},
   ]
   const [menuData, setMenuData] = React.useState([])
-  const [ingredients, setIngredient] = React.useState(IngredientData)
+  const [ingredients, setIngredient] = React.useState([])
 
   const [type, setType] = React.useState("한판")
   const [size, setSize] = React.useState("R")
@@ -35,6 +35,7 @@ export default function OrderPizza() {
 
   React.useEffect(()=>{
     setMenuData(Data)
+    setIngredient(IngredientData)
   },[])
 
   function handleSauce() {
@@ -56,30 +57,55 @@ export default function OrderPizza() {
   function checkSteps(e) {
 
     console.log(e)
+
     menuData.forEach((each) => {
       if (each.title === menu1) {
-        each.ingredients.includes(e) ? console.log("found it") : console.log("not here")
+        each.ingredients.includes(e) ? 
+          turnOnIsSelected(e)
+          
+         : console.log("not here")
       }
     })
+    
 
-    const temp = ingredients
-
-    temp.map((ingredient) => {
-      if (ingredient.title === e) {
-        return (
-          {...ingredient, isSelected: !ingredient.isSelected}
-        )
-      } else {
-        return (
-          {...ingredient}
-        )
-      }
-    })
-
-    setIngredient(temp)
-
-    console.log(ingredients)
+    
   }  
+
+  function turnOnIsSelected(e) {
+
+    let temp = ingredients
+
+    // temp.map((ingredient) => {
+    //   if (ingredient.title === e) {
+    //     console.log(ingredient.title, e)
+    //     console.log("It matches")
+    //     return (
+    //       {...ingredient, isSelected: true}
+    //     )
+    //   } else {
+    //     return (
+    //       {...ingredient}
+    //     )
+    //   }
+    // })    
+
+    setIngredient(
+      temp.map((each) => {
+        if (each.title === e) {
+          return (
+            {...each, isSelected: !each.isSelected}
+          )
+        } else {
+          return (
+            {...each}
+          )
+        }
+      })
+    )
+
+  }
+
+  console.log(ingredients)
 
   return (
     <div>
@@ -154,6 +180,7 @@ export default function OrderPizza() {
 
       <Ingredients 
         checkSteps={checkSteps}
+        ingredients={ingredients}
       />
 
       <Pizza 
