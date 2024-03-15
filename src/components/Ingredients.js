@@ -158,6 +158,12 @@ export default function Ingredients({checkSteps, ingredients}) {
             >통옥수수</div>  
         </div>        
       </div>
+      <div className="edge_cheese"
+        onClick={(e) => checkSteps(e.target.innerText)}
+        style={{backgroundColor: isSelectedList.includes("엣지치즈") && "pink"}}
+      >
+        엣지치즈
+      </div>
     </div>
   )
 }

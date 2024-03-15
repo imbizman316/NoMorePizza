@@ -137,3 +137,10 @@
 .half_half {
   display: flex;
 }
+
+.edge_cheese {
+  height: 50px;
+  border: 1px solid black;
+  width: 300px;
+  text-align: center;
+}
