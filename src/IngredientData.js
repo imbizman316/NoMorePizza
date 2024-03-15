@@ -76,7 +76,7 @@ const IngredientData = [
   },
   {
     id: 16,
-    title: "에멘탈치즈",
+    title: "에멘탈슈레드",
     isSelected: false,
   },
   {
