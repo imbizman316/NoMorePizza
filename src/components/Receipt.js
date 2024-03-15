@@ -1,4 +1,4 @@
-export default function Receipt({type,size,menu1,menu2,count}) {
+export default function Receipt({type,size,menu1,menu2,count,side}) {
   return (
     <div className="receipt">
       <h3>메뉴명</h3>

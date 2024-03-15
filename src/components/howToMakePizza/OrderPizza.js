@@ -25,6 +25,7 @@ export default function OrderPizza() {
   const [size, setSize] = React.useState("R")
   const [menu1, setMenu1] = React.useState("치즈피자")
   const [menu2, setMenu2] = React.useState("치즈피자")
+  const [side, setSide] = React.useState("----------")
   const [count, setCount] = React.useState(1)  
 
   //-----------------------Assemble-----------------------
@@ -153,10 +154,29 @@ export default function OrderPizza() {
         </select>
         :
         ""
-        }        
+        }   
         <div>
+          <select>
+            <option>----------</option>
+            <option>고구마엣지추가</option>
+            <option>리치골드추가</option>
+          </select>
+        </div>             
+        <h3>사이드</h3>
+        <div>
+          <select onChange={(e)=>setSide(e.target.value)}>
+            <option>----------</option>
+            <option>옥수수바질치즈크림뇨끼</option>
+            <option>미트토마토파스타</option>
+            <option>베이컨에멘탈크림파스타</option>
+            <option>쉬림프로제파스타</option>
+            <option>치즈오븐김치볶음밥</option>
+            <option>마라로제파스타</option>
+          </select>
+        </div>             
+        {/* <div>
           <input type="number" min="1" value={count} onChange={(e)=>{setCount(e.target.value.length > 0 && parseInt(e.target.value))}}></input>
-        </div>
+        </div> */}
       </div>
       
       <Receipt         
@@ -165,6 +185,7 @@ export default function OrderPizza() {
         menu1={menu1}
         menu2={menu2}
         count={count}
+        side={side}
       />
 
       <Dough 
