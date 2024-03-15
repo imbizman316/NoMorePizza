@@ -187,7 +187,7 @@ export default function OrderPizza() {
           <select>
             <option>----------</option>
             <option>고구마엣지추가</option>
-            <option>리치골드추가(고구마무스/체다치즈/스트링치즈)</option>
+            <option>리치골드추가(고구마무스/체다치즈/통치즈)</option>
           </select>
         </div>             
         <h3>사이드</h3>
