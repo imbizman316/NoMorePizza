@@ -31,7 +31,7 @@ const IngredientData = [
   },
   {
     id: 7,
-    title: "료끼",
+    title: "뇨끼",
     isSelected: false,
   },
   {
@@ -127,6 +127,11 @@ const IngredientData = [
   {
     id: 26,
     title: "콘마요",
+    isSelected: false,
+  },  
+  {
+    id: 27,
+    title: "마스카포네",
     isSelected: false,
   },  
 ]

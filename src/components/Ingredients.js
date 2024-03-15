@@ -147,6 +147,12 @@ export default function Ingredients({checkSteps, ingredients}) {
         </div>
         <div className="box">
           <div
+            onClick={(e) => checkSteps(e.target.innerText)}
+            style={{backgroundColor: isSelectedList.includes("마스카포네") && "pink"}}
+          >마스카포네</div>
+        </div>
+        <div className="box">
+          <div
               onClick={(e) => checkSteps(e.target.innerText)}
               style={{backgroundColor: isSelectedList.includes("통옥수수") && "pink"}}
             >통옥수수</div>  
