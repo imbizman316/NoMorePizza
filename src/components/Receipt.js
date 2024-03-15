@@ -9,7 +9,8 @@ export default function Receipt({type,size,menu1,menu2,count,side}) {
         <h3> + {menu2}</h3>
         :
         ""
-      } 
+      }      
+      <h3>{side}</h3>
     </div>
   )
 }

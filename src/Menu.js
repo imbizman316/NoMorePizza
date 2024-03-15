@@ -76,7 +76,7 @@ const Menu = [
     title: "콰트로치즈피자",
     sauce: true,
     ingredients: ["치즈", "체다치즈", "에멘탈슈레드", "마스카포네", "엣지치즈"]
-  },
+  },  
 ]
 
 export default Menu

@@ -5,6 +5,7 @@ import Dough from "../Dough";
 import Ingredients from "../Ingredients";
 import Pizza from "../Pizza";
 import IngredientData from "../../IngredientData";
+import SideMenu from "../../SideMenu";
 import '../../App.css'
 
 export default function OrderPizza() {
@@ -109,7 +110,8 @@ export default function OrderPizza() {
   console.log(ingredients)
 
   return (
-    <div>
+    <div className="root">
+      <h2>No More Pizza - Mokdong</h2>
       <div>
         <select onChange={(e)=>setType(e.target.value)} value={type}>
           {/* {menu[0]["type"][0]} */}
