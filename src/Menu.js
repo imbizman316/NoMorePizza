@@ -21,13 +21,13 @@ const Menu = [
     id: 5,
     title: "페퍼로니피자",
     sauce: true,
-    ingredients: ['페퍼로니','엣지치즈'],
+    ingredients: ["치즈",'페퍼로니','엣지치즈'],
   },
   {
     id: 6,
     title: "더블페퍼로니피자",
     sauce: true,
-    ingredients: ['페퍼로니','엣지치즈'],
+    ingredients: ["치즈",'페퍼로니','엣지치즈'],
   },
   {
     id: 7,
