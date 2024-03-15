@@ -45,11 +45,21 @@ export default function OrderPizza() {
   },[menu1])
 
   function handleSauce() {
-    setIsSauce(!isSauce)
+    
+    menuData.forEach((each)=> {
+      if (each.title === menu1 && each.sauce) {
+        setIsSauce(!isSauce)
+      }
+    })
   }
 
   function handleSauce2() {
-    setIsSauce2(!isSauce2)
+
+    menuData.forEach((each)=> {
+      if (each.title === menu2 && each.sauce) {
+        setIsSauce2(!isSauce2)
+      }
+    })
   }
 
   function handleLongCheese() {
