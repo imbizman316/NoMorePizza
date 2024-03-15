@@ -160,6 +160,12 @@ export default function OrderPizza() {
         <div>
           <select>
             <option>----------</option>
+            <option>통치즈크러스트</option>            
+          </select>
+        </div>             
+        <div>
+          <select>
+            <option>----------</option>
             <option>고구마엣지추가</option>
             <option>리치골드추가</option>
           </select>

@@ -9,7 +9,7 @@ const Menu = [
     id: 3,
     title: "옥수수새우피자",
     sauce: true,
-    ingredients: ["통옥수수","시즈닝새우","연유",'엣지치즈']
+    ingredients: ["치즈","통옥수수","시즈닝새우","연유",'엣지치즈']
   },
   {
     id: 4,
