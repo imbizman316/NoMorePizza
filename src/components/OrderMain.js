@@ -1,4 +1,5 @@
-import image from './images/photo_2024-03-19_18-23-47.jpg'
+import image1 from './images/치즈피자.jpg'
+import image2 from './images/옥수수새우피자.jpg'
 
 export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, sidemenu, setSidemenu, sidemenuData, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2,menu2Confirmed,setMenu2Confirmed, toppingData,extraTopping,setExtraTopping,extraToppingConfirmed, setExtraToppingConfirmed,sideConfirmed, setSideConfirmed}) {  
 
@@ -68,7 +69,9 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
                   onClick={(e)=>setMenu1(each.title)}                
                   style={{
                     filter: menu1===each.title && "brightness(40%)",                                        
-                    backgroundImage: `url(${image})`,
+                    // backgroundImage: `url(${image})`,
+                    backgroundImage: `url(${image2
+                    })`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     color: 'darkgrey',
@@ -101,7 +104,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
                   onClick={(e)=>setMenu2(each.title)}                
                   style={{
                     filter: menu2===each.title && "brightness(40%)",                                        
-                    backgroundImage: `url(${image})`,
+                    backgroundImage: `url(${image1})`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     color: 'darkgrey',
@@ -194,4 +197,4 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
     </div>
     
   )
-}
+} 
