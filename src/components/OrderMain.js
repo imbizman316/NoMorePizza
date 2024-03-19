@@ -1,6 +1,6 @@
 import image from './images/photo_2024-03-19_18-23-47.jpg'
 
-export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, setSide, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2}) {
+export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, sidemenu, setSidemenu, sidemenuData, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2,menu2Confirmed,setMenu2Confirmed, toppingData,extraTopping,setExtraTopping,extraToppingConfirmed, setExtraToppingConfirmed,sideConfirmed, setSideConfirmed}) {  
 
   return (
     <div>
@@ -50,7 +50,10 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
       </div> 
       }
 
-      {sizeConfirmed && !menu1Confirmed && <div className="stage_menu">
+      {sizeConfirmed && !menu1Confirmed && !menu2Confirmed && 
+      <div className='menu_top'>
+      <div className='menu_two'>
+      <div className="stage_menu">
         <h3>피자1의 종류를 선택해주세요.</h3>
 
         <div className="option_board_menu">
@@ -61,17 +64,17 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
                 <div 
                   key={each.id} 
                   value={each.title} 
-                  className="option"
+                  className="option_menu"
                   onClick={(e)=>setMenu1(each.title)}                
                   style={{
-                    backgroundColor: menu1===each.title && "skyblue",                    
+                    filter: menu1===each.title && "brightness(40%)",                                        
                     backgroundImage: `url(${image})`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     color: 'darkgrey',
                     fontSize: '18px',
                     WebkitTextStrokeWidth: '1px',
-                    WebkitTextStrokeColor: 'black',
+                    WebkitTextStrokeColor:  menu1===each.title ? 'white' : 'black',
                     textAlign: 'center',
                   }}
                 >{each.title}</div>
@@ -79,52 +82,112 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
                 </>
                 )
               })
-            }
-          
-        </div>
-        <button onClick={()=>setMenu1Confirmed(true)}>다음</button>
-      </div>}
+            }  
+        </div>        
+      </div>
       
-        { type === "반반" ? 
-            <div>
-            <h3>피자2의 종류를 선택해주세요.</h3>
-            <select onChange={(e)=>setMenu2(e.target.value)}>
-            {/* {menu[0]["type"][0]} */}
+      { type === "반반" ? <div className="stage_menu">
+        <h3>피자2의 종류를 선택해주세요.</h3>
+
+        <div className="option_board_menu">
             {
               menuData.map((each) => {
               return (
-                <option key={each.id} value={each.title}>{each.title}</option>
-              )
-            } )}
-          </select>
-          </div>
-          :
-          <div>          
-          </div>
+                <>
+                <div 
+                  key={each.id} 
+                  value={each.title} 
+                  className="option_menu"
+                  onClick={(e)=>setMenu2(each.title)}                
+                  style={{
+                    filter: menu2===each.title && "brightness(40%)",                                        
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    color: 'darkgrey',
+                    fontSize: '18px',
+                    WebkitTextStrokeWidth: '1px',
+                    WebkitTextStrokeColor:  menu2===each.title ? 'white' : 'black',
+                    textAlign: 'center',
+                  }}
+                >{each.title}</div>
+                
+                </>
+                )
+              })
+            }  
+        </div>        
+      </div>
+
+      :
+
+        <>
+        </>
+      
+      }      
+    </div> 
+    <button onClick={()=>{
+      if (menu1 !== null && menu2 !== null && type==="반반") {
+        setMenu1Confirmed(true);
+        setMenu2Confirmed(true);
+      } else if (menu1 !== null && type==="한판"){
+        setMenu1Confirmed(true);
+        setMenu2Confirmed(true);
+      }
+      
+      }}>다음</button>
+    </div>
+  }
         
-        }   
-        
-        <div>
-          <h3>토핑을 선택해주세요.</h3>
-          <select>
-            <option>----------</option>
-            <option>통치즈크러스트</option>            
-            <option>고구마엣지추가</option>
-            <option>리치골드추가(고구마무스/체다치즈/통치즈)</option>
-          </select>
-        </div>                     
+    {
+      menu1Confirmed && menu2Confirmed && !extraToppingConfirmed &&
+      <div className='stage'>
+        <h3>토핑을 선택해주세요.</h3>
+        <div className='option_board'>
+        {
+          toppingData.map((each) => {
+
+            return (
+              <div 
+                key={each.id}
+                className='option'
+                onClick={()=>{setExtraTopping(each.title)}}
+                style={{backgroundColor: extraTopping===each.title && "skyblue"}}
+              >
+                {each.title}
+              </div>
+            )
+          })
+        }        
+        </div>
+        <button onClick={()=>setExtraToppingConfirmed(true)}>다음</button>
+      </div>
+    }
+
+      {
+        extraToppingConfirmed && !sideConfirmed &&
+        <div className='stage'>
+
         <h3>사이드메뉴를 선택해주세요.</h3>
-        <div>
-          <select onChange={(e)=>setSide(e.target.value)}>
-            <option>----------</option>
-            <option>옥수수바질치즈크림뇨끼</option>
-            <option>미트토마토파스타</option>
-            <option>베이컨에멘탈크림파스타</option>
-            <option>쉬림프로제파스타</option>
-            <option>치즈오븐김치볶음밥</option>
-            <option>마라로제파스타</option>
-          </select>
-        </div>             
+        <div className='option_board'>
+        {
+          sidemenuData.map((each) => {
+
+            return (
+              <div 
+                key={each.id}
+                className='option'
+                onClick={()=>{setSidemenu(each.title)}}
+                style={{backgroundColor: sidemenu === each.title && "skyblue"}}
+              >
+                {each.title}
+              </div>
+            )
+          })
+        }
+        </div>                
+        <button onClick={()=>setSideConfirmed(true)}>다음</button>
+      </div>}
         {/* <div>
           <input type="number" min="1" value={count} onChange={(e)=>{setCount(e.target.value.length > 0 && parseInt(e.target.value))}}></input>
         </div> */}

@@ -4,7 +4,7 @@ export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isL
 
   return (
     <div className="dough">
-      <h3>도우 테이블</h3>
+      <h3>도우를 순서대로 준비하세요.</h3>
       <div className="dough_layout">        
         <div className="machine">
           <div className="role">납작기계</div>

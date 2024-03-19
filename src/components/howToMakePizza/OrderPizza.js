@@ -5,7 +5,7 @@ import Dough from "../Dough";
 import Ingredients from "../Ingredients";
 import Pizza from "../Pizza";
 import IngredientData from "../../IngredientData";
-import SideMenu from "../../SideMenu";
+import sidemenuData from "../../SideMenu";
 import OrderMain from "../OrderMain"
 import '../../App.css'
 
@@ -20,6 +20,13 @@ export default function OrderPizza() {
     {id: 2, size:"R"},
     {id: 3, size:"P"},
   ]
+
+  const toppingData = [
+    {id: 1, title: '통치즈크러스트'},
+    {id: 2, title: '고구마엣지'},    
+    {id: 3, title: '리치골드'},
+  ]
+
   const [menuData, setMenuData] = React.useState([])
   const [ingredients, setIngredient] = React.useState([])
 
@@ -29,16 +36,16 @@ export default function OrderPizza() {
   const [size, setSize] = React.useState("")
   const [sizeConfirmed, setSizeConfirmed] = React.useState(false)
 
-  const [menu1, setMenu1] = React.useState("치즈피자")
+  const [menu1, setMenu1] = React.useState(null)
   const [menu1Confirmed, setMenu1Confirmed] = React.useState(false)
 
-  const [menu2, setMenu2] = React.useState("치즈피자")
+  const [menu2, setMenu2] = React.useState(null)
   const [menu2Confirmed, setMenu2Confirmed] = React.useState(false)
 
-  const [extraTopping, setExtraTopping] = React.useState("----------")
+  const [extraTopping, setExtraTopping] = React.useState(null)
   const [extraToppingConfirmed, setExtraToppingConfirmed] = React.useState(false)
 
-  const [side, setSide] = React.useState("----------")
+  const [sidemenu, setSidemenu] = React.useState(null)
   const [sideConfirmed, setSideConfirmed] = React.useState(false)
 
   const [count, setCount] = React.useState(1)  
@@ -48,6 +55,8 @@ export default function OrderPizza() {
   const [isSauce2, setIsSauce2] = React.useState(false)
   const [isLongCheese, setIsLongCheese] = React.useState(false)
   const [isSize, setIsSize] = React.useState("")
+
+  const [daughReady, setDaughReady] = React.useState(false)
 
   React.useEffect(()=>{
     setMenuData(Data)
@@ -163,19 +172,23 @@ export default function OrderPizza() {
         setMenu1Confirmed={setMenu1Confirmed}
         setMenu2={setMenu2}
         menu2={menu2}
-        setSide={setSide}
-      />      
-      
-      <Receipt         
-        type={type}         
-        size={size}
-        menu1={menu1}
-        menu2={menu2}
-        count={count}
-        side={side}
+        menu2Confirmed={menu2Confirmed}
+        setMenu2Confirmed={setMenu2Confirmed}
+        sidemenu={sidemenu}
+        setSidemenu={setSidemenu}
+        sidemenuData={sidemenuData}        
+        toppingData={toppingData}
+        extraTopping={extraTopping}
+        setExtraTopping={setExtraTopping}
+        extraToppingConfirmed={extraToppingConfirmed}
+        setExtraToppingConfirmed={setExtraToppingConfirmed}
+        sideConfirmed={sideConfirmed}
+        setSideConfirmed={setSideConfirmed}
       />
 
-      <Dough 
+      {
+        sideConfirmed &&        
+        <Dough 
         isSauce={isSauce}
         isSauce2={isSauce2}
         handleSauce={handleSauce}
@@ -184,19 +197,38 @@ export default function OrderPizza() {
         handleIsLongCheese={handleLongCheese}
         handleIsSize={handleIsSize}
         isSize={isSize}
-      />
+        />
+      }      
 
-      <Ingredients 
+      {
+        daughReady && 
+        <Ingredients 
         checkSteps={checkSteps}
         ingredients={ingredients}
-      />
+        />
+      }
+      
+      <div className="bottom_summary">
+        <Receipt         
+          type={type}         
+          size={size}
+          menu1={menu1}
+          menu2={menu2}
+          count={count}
+          extraTopping={extraTopping}
+          side={sidemenu}
+        />      
 
-      <Pizza 
-        isSauce={isSauce}
-        isSauce2={isSauce2}
-        isLongCheese={isLongCheese}
-        isSize={isSize}
-      />
+        
+
+        <Pizza 
+          isSauce={isSauce}
+          isSauce2={isSauce2}
+          isLongCheese={isLongCheese}
+          isSize={isSize}
+        />
+
+    </div>
     </div>
   )
 }
