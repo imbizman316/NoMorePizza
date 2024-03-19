@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nomorepizza/static/css/main.fbf11e1a.css",
-    "main.js": "/nomorepizza/static/js/main.6e1c45bf.js",
+    "main.css": "/nomorepizza/static/css/main.9c3ec582.css",
+    "main.js": "/nomorepizza/static/js/main.cf9e8928.js",
     "static/js/453.15317aba.chunk.js": "/nomorepizza/static/js/453.15317aba.chunk.js",
     "index.html": "/nomorepizza/index.html",
-    "main.fbf11e1a.css.map": "/nomorepizza/static/css/main.fbf11e1a.css.map",
-    "main.6e1c45bf.js.map": "/nomorepizza/static/js/main.6e1c45bf.js.map",
+    "main.9c3ec582.css.map": "/nomorepizza/static/css/main.9c3ec582.css.map",
+    "main.cf9e8928.js.map": "/nomorepizza/static/js/main.cf9e8928.js.map",
     "453.15317aba.chunk.js.map": "/nomorepizza/static/js/453.15317aba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbf11e1a.css",
-    "static/js/main.6e1c45bf.js"
+    "static/css/main.9c3ec582.css",
+    "static/js/main.cf9e8928.js"
   ]
 }
