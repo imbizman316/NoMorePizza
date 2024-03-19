@@ -156,9 +156,13 @@ export default function OrderPizza() {
         sizeData={sizeData}
         sizeConfirmed={sizeConfirmed}
         setSizeConfirmed={setSizeConfirmed}
+        menu1={menu1}
         setMenu1={setMenu1}
         menuData={menuData}
+        menu1Confirmed={menu1Confirmed}
+        setMenu1Confirmed={setMenu1Confirmed}
         setMenu2={setMenu2}
+        menu2={menu2}
         setSide={setSide}
       />      
       

@@ -3,7 +3,8 @@ const Menu = [
     id: 1,
     title: "치즈피자",
     sauce: true,
-    ingredients: ["치즈", "엣지치즈"]
+    ingredients: ["치즈", "엣지치즈"],
+    image: "",
   },  
   {
     id: 3,

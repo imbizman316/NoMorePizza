@@ -1,8 +1,10 @@
-export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, setSide, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed}) {
+import image from './images/photo_2024-03-19_18-23-47.jpg'
+
+export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, setSide, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2}) {
 
   return (
     <div>
-      <h2>No More Pizza - Mokdong</h2>
+      <h2 style={{textAlign:"center"}}>No More Pizza - Mokdong</h2>
       {
         !typeConfirmed &&
         <div className="stage">
@@ -26,7 +28,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
         </div>
       }
       {
-        typeConfirmed &&
+        typeConfirmed && !sizeConfirmed &&
         <div className="stage">
         <h3>사이즈를 선택해주세요.</h3>
         <div className="option_board">
@@ -44,22 +46,44 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
               })
             }
         </div>
-        <button>다음</button>
+        <button onClick={()=>setSizeConfirmed(true)}>다음</button>
       </div> 
       }
 
-      <div>
+      {sizeConfirmed && !menu1Confirmed && <div className="stage_menu">
         <h3>피자1의 종류를 선택해주세요.</h3>
-        <select onChange={(e)=>setMenu1(e.target.value)}>
-          {/* {menu[0]["type"][0]} */}
-          {
-            menuData.map((each) => {
-            return (
-              <option key={each.id} value={each.title}>{each.title}</option>
-            )
-          } )}
-        </select>
-      </div>
+
+        <div className="option_board_menu">
+            {
+              menuData.map((each) => {
+              return (
+                <>
+                <div 
+                  key={each.id} 
+                  value={each.title} 
+                  className="option"
+                  onClick={(e)=>setMenu1(each.title)}                
+                  style={{
+                    backgroundColor: menu1===each.title && "skyblue",                    
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    color: 'darkgrey',
+                    fontSize: '18px',
+                    WebkitTextStrokeWidth: '1px',
+                    WebkitTextStrokeColor: 'black',
+                    textAlign: 'center',
+                  }}
+                >{each.title}</div>
+                
+                </>
+                )
+              })
+            }
+          
+        </div>
+        <button onClick={()=>setMenu1Confirmed(true)}>다음</button>
+      </div>}
       
         { type === "반반" ? 
             <div>
@@ -75,8 +99,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
           </select>
           </div>
           :
-          <div>
-          ""
+          <div>          
           </div>
         
         }   
