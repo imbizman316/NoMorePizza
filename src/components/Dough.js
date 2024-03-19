@@ -1,10 +1,14 @@
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
-export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize}) {
+export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize,getPlate,setGetPlate,applyOil,setApplyOil,getDough,setGetDough,  powderDough,setPowderDough,kneadDough,setKneadDough,}) {  
 
   return (
     <div className="dough">
-      <h3>도우를 순서대로 준비하세요.</h3>
+      <h3>1.사이즈에 맞는 접시를 꺼내세요.</h3>
+      {getPlate && <h3>2.접시에 기름을 칠하세요.</h3>}
+      {applyOil && <h3>3.아래 서랍에서 사이즈에 맞게 도우를 꺼내세요.</h3>}
+      {getDough && <h3>4.도우의 앞뒤면을 가루판에 꾹꾹 눌러주세요.</h3>}
+      {powderDough && <h3>5.납작기계에 두번 넣어주세요.</h3>}
       <div className="dough_layout">        
         <div className="machine">
           <div className="role">납작기계</div>

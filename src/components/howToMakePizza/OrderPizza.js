@@ -48,6 +48,13 @@ export default function OrderPizza() {
   const [sidemenu, setSidemenu] = React.useState(null)
   const [sideConfirmed, setSideConfirmed] = React.useState(false)
 
+  //---------------------DOUGH---------------------//
+  const [getPlate, setGetPlate] = React.useState(false)
+  const [applyOil, setApplyOil] = React.useState(false)
+  const [getDough, setGetDough] = React.useState(false)
+  const [powderDough, setPowderDough] = React.useState(false)
+  const [kneadDough, setKneadDough] = React.useState(false)  
+
   const [count, setCount] = React.useState(1)  
 
   //-----------------------Assemble-----------------------
@@ -197,8 +204,19 @@ export default function OrderPizza() {
         handleIsLongCheese={handleLongCheese}
         handleIsSize={handleIsSize}
         isSize={isSize}
+
+        getPlate={getPlate}
+        setGetPlate={setGetPlate}
+        applyOil={applyOil}
+        setApplyOil={setApplyOil}
+        getDough={getDough}
+        setGetDough={setGetDough}
+        powderDough={powderDough}
+        setPowderDough={setPowderDough}
+        kneadDough={kneadDough}
+        setKneadDough={setKneadDough}
         />
-      }      
+      }        
 
       {
         daughReady && 
