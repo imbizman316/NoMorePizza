@@ -1,4 +1,4 @@
-export default function Pizza({isSauce, isSauce2, isLongCheese}) {
+export default function Pizza({isSauce, isSauce2, isLongCheese, isOil, isHole}) {
 
   return (
     <div className="pizza">
@@ -10,14 +10,16 @@ export default function Pizza({isSauce, isSauce2, isLongCheese}) {
       <div className="half_half">
         <div className="circle3"
           style={{
-            border: isLongCheese ? "10px solid black" : "1px solid black",
+            border: isLongCheese ? "10px solid black" : "1px solid black",            
             backgroundColor: isSauce && "#FF6347",
+            borderColor: isOil ? "blue" : "black",
           }}
         ></div>
         <div className="circle2"
           style={{
             border: isLongCheese ? "10px solid black" : "1px solid black",
             backgroundColor: isSauce2 && "#FF6347",
+            borderColor: isOil ? "blue" : "black",
           }}
         ></div>        
       </div>

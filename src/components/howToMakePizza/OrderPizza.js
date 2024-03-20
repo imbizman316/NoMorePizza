@@ -30,10 +30,10 @@ export default function OrderPizza() {
   const [menuData, setMenuData] = React.useState([])
   const [ingredients, setIngredient] = React.useState([])
 
-  const [type, setType] = React.useState("")
+  const [type, setType] = React.useState(null)
   const [typeConfirmed, setTypeConfirmed] = React.useState(false)
 
-  const [size, setSize] = React.useState("")
+  const [size, setSize] = React.useState(null)
   const [sizeConfirmed, setSizeConfirmed] = React.useState(false)
 
   const [menu1, setMenu1] = React.useState(null)
@@ -60,8 +60,13 @@ export default function OrderPizza() {
   //-----------------------Assemble-----------------------
   const [isSauce, setIsSauce] = React.useState(false)
   const [isSauce2, setIsSauce2] = React.useState(false)
+
+  const [isOil, setIsOil] = React.useState(false)
+
+  const [isHole, setIsHole] = React.useState(false)
+
   const [isLongCheese, setIsLongCheese] = React.useState(false)
-  const [isSize, setIsSize] = React.useState("")
+  const [isSize, setIsSize] = React.useState(null)
 
   const [daughReady, setDaughReady] = React.useState(false)
 
@@ -103,7 +108,7 @@ export default function OrderPizza() {
   }
 
   function handleIsSize(e) {
-    setIsSize(e)
+    setIsSize(e)    
   }
 
   function checkSteps(e) {
@@ -198,10 +203,19 @@ export default function OrderPizza() {
         <Dough 
         isSauce={isSauce}
         isSauce2={isSauce2}
+
+        isOil={isOil}
+        setIsOil={setIsOil}
+
+        isHole={isHole}
+        setIsHole={setIsHole}
+
         handleSauce={handleSauce}
         handleSauce2={handleSauce2}
+
         isLongCheese={isLongCheese}
         handleIsLongCheese={handleLongCheese}
+        
         handleIsSize={handleIsSize}
         isSize={isSize}
 
@@ -242,8 +256,10 @@ export default function OrderPizza() {
         <Pizza 
           isSauce={isSauce}
           isSauce2={isSauce2}
+          isOil={isOil}
           isLongCheese={isLongCheese}
           isSize={isSize}
+          isHole={isHole}
         />
 
     </div>

@@ -1,11 +1,21 @@
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
-export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize,getPlate,setGetPlate,applyOil,setApplyOil,getDough,setGetDough,  powderDough,setPowderDough,kneadDough,setKneadDough,}) {  
+export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, isHole, setIsHole, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize,getPlate,setGetPlate,applyOil,setApplyOil,getDough,setGetDough,  powderDough,setPowderDough,kneadDough,setKneadDough,}) {  
+
+  function handleNext() {
+    if (isSize !== null) {
+      setGetPlate(true)
+    }
+    if (getPlate ) {
+      setApplyOil(true)
+    }
+    
+  }
 
   return (
     <div className="dough">
-      <h3>1.사이즈에 맞는 접시를 꺼내세요.</h3>
-      {getPlate && <h3>2.접시에 기름을 칠하세요.</h3>}
+      {!getPlate && <h3>1.사이즈에 맞는 접시를 꺼내세요.</h3>}
+      {getPlate && !applyOil && <h3>2.접시에 기름을 칠하세요.</h3>}
       {applyOil && <h3>3.아래 서랍에서 사이즈에 맞게 도우를 꺼내세요.</h3>}
       {getDough && <h3>4.도우의 앞뒤면을 가루판에 꾹꾹 눌러주세요.</h3>}
       {powderDough && <h3>5.납작기계에 두번 넣어주세요.</h3>}
@@ -36,7 +46,13 @@ export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isL
             ()=>handleSauce2()} 
             style={{ backgroundColor: isSauce2 ? "pink" : "white"}}>소스2
           </div>
-          <div>기름칠</div>          
+          <div
+            onClick={
+              ()=>setIsOil(!isOil)
+            }
+            style={{backgroundColor: isOil ? "pink" : "white"}}
+          >
+            기름칠</div>          
           <div>구멍뚤기</div>        
           <div
             onClick={
@@ -52,6 +68,7 @@ export default function Dough({isSauce, handleSauce, isSauce2, handleSauce2, isL
         </div>
       </div>       
       </div>
+      <button onClick={handleNext}>다음</button>
     </div>
   )
 }
