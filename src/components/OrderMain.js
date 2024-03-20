@@ -59,11 +59,11 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
 
         <div className="option_board_menu">
             {
-              menuData.map((each) => {
+              menuData.map((each,index) => {
               return (
                 <>
                 <div 
-                  key={each.id} 
+                  key={index} 
                   value={each.title} 
                   className="option_menu"
                   onClick={(e)=>setMenu1(each.title)}                
@@ -94,11 +94,11 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
 
         <div className="option_board_menu">
             {
-              menuData.map((each) => {
+              menuData.map((each,index) => {
               return (
                 <>
                 <div 
-                  key={each.id} 
+                  key={index} 
                   value={each.title} 
                   className="option_menu"
                   onClick={(e)=>setMenu2(each.title)}                

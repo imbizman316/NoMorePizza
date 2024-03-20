@@ -86,11 +86,11 @@
 }
 
 .ingredients {
-  border-bottom: 1px solid black;
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
 }
 
 .ingredients_boxes {

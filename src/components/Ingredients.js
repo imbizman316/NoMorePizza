@@ -1,6 +1,8 @@
-export default function Ingredients({checkSteps, ingredients}) {
+export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven}) {
 
   const isSelectedList = []
+
+  // console.log(isSelectedList.length)
 
   ingredients.forEach((each)=>{
     each.isSelected && isSelectedList.push(each.title)
@@ -164,6 +166,7 @@ export default function Ingredients({checkSteps, ingredients}) {
       >
         엣지치즈
       </div>
+      <button onClick={()=>checkIfReadyForOven(isSelectedList)}>다음</button>
     </div>
   )
 }

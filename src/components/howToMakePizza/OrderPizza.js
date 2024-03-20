@@ -8,6 +8,7 @@ import IngredientData from "../../IngredientData";
 import sidemenuData from "../../SideMenu";
 import OrderMain from "../OrderMain"
 import '../../App.css'
+import Oven from "../Oven";
 
 export default function OrderPizza() {
 
@@ -48,7 +49,7 @@ export default function OrderPizza() {
   const [sidemenu, setSidemenu] = React.useState(null)
   const [sideConfirmed, setSideConfirmed] = React.useState(false)
 
-  //---------------------DOUGH---------------------//
+  //------------------------------------------//
   const [getPlate, setGetPlate] = React.useState(false)
   const [applyOil, setApplyOil] = React.useState(false)
   const [getDough, setGetDough] = React.useState(false)
@@ -62,13 +63,19 @@ export default function OrderPizza() {
   const [isSauce2, setIsSauce2] = React.useState(false)
 
   const [isOil, setIsOil] = React.useState(false)
+  
+  const [getDoughSize, setGetDoughSize] = React.useState(null)
 
   const [isHole, setIsHole] = React.useState(false)
+
+  const [sauceDone, setSauceDone] = React.useState(false)
 
   const [isLongCheese, setIsLongCheese] = React.useState(false)
   const [isSize, setIsSize] = React.useState(null)
 
   const [daughReady, setDaughReady] = React.useState(false)
+
+  const [readyForOven, SetReadyForOven] = React.useState(false)
 
   React.useEffect(()=>{
     setMenuData(Data)
@@ -84,6 +91,10 @@ export default function OrderPizza() {
     setIngredient(IngredientData)
     setIsSauce2(false)    
   },[menu2])
+
+  function handleGetDough(b) {
+    setGetDoughSize(b)    
+  }
 
   function handleSauce() {
     
@@ -111,9 +122,7 @@ export default function OrderPizza() {
     setIsSize(e)    
   }
 
-  function checkSteps(e) {
-
-    console.log(e)
+  function checkSteps(e) {    
 
     menuData.forEach((each) => {
       if (each.title === menu1) {
@@ -123,28 +132,12 @@ export default function OrderPizza() {
          : console.log("not here")
       }
     })
-    
-
-    
+        
   }  
 
   function turnOnIsSelected(e) {
 
     let temp = ingredients
-
-    // temp.map((ingredient) => {
-    //   if (ingredient.title === e) {
-    //     console.log(ingredient.title, e)
-    //     console.log("It matches")
-    //     return (
-    //       {...ingredient, isSelected: true}
-    //     )
-    //   } else {
-    //     return (
-    //       {...ingredient}
-    //     )
-    //   }
-    // })    
 
     setIngredient(
       temp.map((each) => {
@@ -160,9 +153,30 @@ export default function OrderPizza() {
       })
     )
 
-  }
+  }  
 
-  console.log(ingredients)
+  function checkIfReadyForOven(allItems){   
+
+    console.log(allItems[0])
+
+    Data.forEach((item, index) => {
+      if (item.title === menu1) 
+      {
+        const targetIngredients = item.ingredients
+        
+        targetIngredients.forEach((each)=>{
+          if (!allItems.includes(each)) {
+            alert("You don't have " + each)
+            return false
+          }
+        })
+
+      }
+    })
+
+    alert("All good ready to go")
+    return true
+  }
 
   return (
     <div className="root">
@@ -199,7 +213,7 @@ export default function OrderPizza() {
       />
 
       {
-        sideConfirmed &&        
+        sideConfirmed && !daughReady &&
         <Dough 
         isSauce={isSauce}
         isSauce2={isSauce2}
@@ -213,11 +227,18 @@ export default function OrderPizza() {
         handleSauce={handleSauce}
         handleSauce2={handleSauce2}
 
+        getDoughSize={getDoughSize}
+        setGetDoughSize={setGetDoughSize}
+        handleGetDough={handleGetDough}
+
         isLongCheese={isLongCheese}
         handleIsLongCheese={handleLongCheese}
-        
+
         handleIsSize={handleIsSize}
         isSize={isSize}
+
+        sauceDone={sauceDone}
+        setSauceDone={setSauceDone}
 
         getPlate={getPlate}
         setGetPlate={setGetPlate}
@@ -229,6 +250,8 @@ export default function OrderPizza() {
         setPowderDough={setPowderDough}
         kneadDough={kneadDough}
         setKneadDough={setKneadDough}
+        setDaughReady={setDaughReady}
+
         />
       }        
 
@@ -237,6 +260,7 @@ export default function OrderPizza() {
         <Ingredients 
         checkSteps={checkSteps}
         ingredients={ingredients}
+        checkIfReadyForOven={checkIfReadyForOven}
         />
       }
       
@@ -262,7 +286,10 @@ export default function OrderPizza() {
           isHole={isHole}
         />
 
-    </div>
+      </div>
+      {readyForOven && <Oven 
+          
+          />}
     </div>
   )
 }
