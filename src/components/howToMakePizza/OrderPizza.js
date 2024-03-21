@@ -79,7 +79,7 @@ export default function OrderPizza() {
 
   const [readyForOven, SetReadyForOven] = React.useState(false)
 
-  const [highlight, setHighlight] = React.useState(false)
+  const [highlight, setHighlight] = React.useState(false)  
 
   React.useEffect(()=>{
     setMenuData(Data)
@@ -281,6 +281,7 @@ export default function OrderPizza() {
           
       
       />}
+      
 
       <div className="bottom_summary">
         <Receipt         

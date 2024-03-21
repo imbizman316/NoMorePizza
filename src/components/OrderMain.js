@@ -1,10 +1,13 @@
-import image1 from './images/치즈피자.jpg'
-import image2 from './images/옥수수새우피자.jpg'
+import 치즈피자 from './images/치즈피자.jpg'
+import 옥수수새우피자 from './images/옥수수새우피자.jpg'
+
 
 export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, sidemenu, setSidemenu, sidemenuData, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2,menu2Confirmed,setMenu2Confirmed, toppingData,extraTopping,setExtraTopping,extraToppingConfirmed, setExtraToppingConfirmed,sideConfirmed, setSideConfirmed}) {  
 
+  const images = [치즈피자, 옥수수새우피자]
+
   return (
-    <div>
+    <div>      
       <h2 style={{textAlign:"center"}}>No More Pizza - Mokdong</h2>
       {
         !typeConfirmed &&
@@ -70,7 +73,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
                   style={{
                     filter: menu1===each.title && "brightness(40%)",                                        
                     // backgroundImage: `url(${image})`,
-                    backgroundImage: `url(${image2
+                    backgroundImage: `url(${each.image
                     })`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
@@ -104,7 +107,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
                   onClick={(e)=>setMenu2(each.title)}                
                   style={{
                     filter: menu2===each.title && "brightness(40%)",                                        
-                    backgroundImage: `url(${image1})`,
+                    backgroundImage: `url(${each.image})`,
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     color: 'darkgrey',
