@@ -6,10 +6,10 @@ export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, 
     if (isSize !== null) {
       setGetPlate(true)
     }
-    if (getPlate ) {
+    if (getPlate && isOil ) {
       setApplyOil(true)
     }
-    if (applyOil) {
+    if (applyOil && getDoughSize !== null) {
       setGetDough(true)
     }
 
@@ -39,7 +39,7 @@ export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, 
     <div className="dough">
       {!getPlate && <h3>1.사이즈에 맞는 접시를 꺼내세요.</h3>}
       {getPlate && !applyOil && <h3>2.접시에 기름을 칠하세요.</h3>}
-      {applyOil && !getDough && <h3>3.아래 서랍에서 사이즈에 맞게 도우를 꺼내세요.</h3>}
+      {applyOil && !getDough && isOil && <h3>3.아래 서랍에서 사이즈에 맞게 도우를 꺼내세요.</h3>}
       {getDough && !powderDough&& <h3>4.도우의 앞뒤면을 가루판에 꾹꾹 눌러주세요.</h3>}
       {powderDough && !kneadDough && <h3>5.납작기계에 두번 넣어주세요.</h3>}
       {kneadDough && !isHole && <h3>6. 구멍을 뚤어주세요.</h3>}
@@ -49,7 +49,8 @@ export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, 
           <div className="role">납작기계</div>
           <div 
             className="powder"
-            onClick={()=>{}}
+            onClick={()=>{setPowderDough(true)}}
+            style={{backgroundColor: powderDough && "pink"}}
           >가루</div>
         </div>
       <div className="right">

@@ -10,6 +10,8 @@ import OrderMain from "../OrderMain"
 import '../../App.css'
 import Oven from "../Oven";
 
+//test
+
 export default function OrderPizza() {
 
   const typeData = [
@@ -76,6 +78,8 @@ export default function OrderPizza() {
   const [daughReady, setDaughReady] = React.useState(false)
 
   const [readyForOven, SetReadyForOven] = React.useState(false)
+
+  const [highlight, setHighlight] = React.useState(false)
 
   React.useEffect(()=>{
     setMenuData(Data)
@@ -173,8 +177,12 @@ export default function OrderPizza() {
       }
     })
 
-    isAll && SetReadyForOven(true)
+    isAll && SetReadyForOven(true)    
+  }
+
+  function highlightIngredients() {
     
+    setHighlight(!highlight)
   }
 
   return (
@@ -260,10 +268,16 @@ export default function OrderPizza() {
         checkSteps={checkSteps}
         ingredients={ingredients}
         checkIfReadyForOven={checkIfReadyForOven}
+        menu1={menu1}
+        menu2={menu2}
+        sidemenu={sidemenu}
+        highlight={highlight}
+        highlightIngredients={highlightIngredients}
+        menu={Data}
         />
       }
       
-      {readyForOven && <Oven 
+      {readyForOven && <Oven
           
       
       />}
