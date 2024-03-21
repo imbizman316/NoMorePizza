@@ -155,9 +155,9 @@ export default function OrderPizza() {
 
   }  
 
-  function checkIfReadyForOven(allItems){   
+  function checkIfReadyForOven(allItems){       
 
-    console.log(allItems[0])
+    let isAll = true
 
     Data.forEach((item, index) => {
       if (item.title === menu1) 
@@ -166,16 +166,15 @@ export default function OrderPizza() {
         
         targetIngredients.forEach((each)=>{
           if (!allItems.includes(each)) {
-            alert("You don't have " + each)
-            return false
+            isAll = false            
           }
         })
 
       }
     })
 
-    alert("All good ready to go")
-    return true
+    isAll && SetReadyForOven(true)
+    
   }
 
   return (
@@ -256,7 +255,7 @@ export default function OrderPizza() {
       }        
 
       {
-        daughReady && 
+        daughReady && !readyForOven &&
         <Ingredients 
         checkSteps={checkSteps}
         ingredients={ingredients}
@@ -264,6 +263,11 @@ export default function OrderPizza() {
         />
       }
       
+      {readyForOven && <Oven 
+          
+      
+      />}
+
       <div className="bottom_summary">
         <Receipt         
           type={type}         
@@ -286,10 +290,7 @@ export default function OrderPizza() {
           isHole={isHole}
         />
 
-      </div>
-      {readyForOven && <Oven 
-          
-          />}
+      </div>      
     </div>
   )
 }
