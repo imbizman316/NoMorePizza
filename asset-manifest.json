@@ -1,17 +1,28 @@
 {
   "files": {
     "main.css": "/nomorepizza/static/css/main.9ecf7817.css",
-    "main.js": "/nomorepizza/static/js/main.d098ae6e.js",
+    "main.js": "/nomorepizza/static/js/main.67ebcb8b.js",
     "static/js/453.15317aba.chunk.js": "/nomorepizza/static/js/453.15317aba.chunk.js",
     "static/media/옥수수새우피자.jpg": "/nomorepizza/static/media/옥수수새우피자.afc6e9558a942bebcaeb.jpg",
+    "static/media/바질마스카포네뇨끼피자.jpg": "/nomorepizza/static/media/바질마스카포네뇨끼피자.3edd58ee5531c5359cf4.jpg",
+    "static/media/페퍼로니피자.jpg": "/nomorepizza/static/media/페퍼로니피자.a04e519cc5d510912932.jpg",
+    "static/media/베이컨포테이토피자.jpg": "/nomorepizza/static/media/베이컨포테이토피자.4d3dda2d37d2cffcdc3e.jpg",
     "static/media/치즈피자.jpg": "/nomorepizza/static/media/치즈피자.5bd6c1eb283112872ba1.jpg",
+    "static/media/체다베이컨피자.jpg": "/nomorepizza/static/media/체다베이컨피자.c0757bf169788c8b7f5b.jpg",
+    "static/media/베이컨하와이안피자.jpg": "/nomorepizza/static/media/베이컨하와이안피자.a04120b0ed7794abd567.jpg",
+    "static/media/에멘탈머쉬룸피자.jpg": "/nomorepizza/static/media/에멘탈머쉬룸피자.1abccd8b9f301846326c.jpg",
+    "static/media/콰트로치즈피자.jpg": "/nomorepizza/static/media/콰트로치즈피자.4e4a2be1419df8d40c73.jpg",
+    "static/media/스윗고구마피자.jpg": "/nomorepizza/static/media/스윗고구마피자.5ac27998b64090195b1e.jpg",
+    "static/media/슈퍼콤비네이션피자.jpg": "/nomorepizza/static/media/슈퍼콤비네이션피자.be3c21c31241f77f146d.jpg",
+    "static/media/더블페퍼로니피자.jpg": "/nomorepizza/static/media/더블페퍼로니피자.0f4b65e82288d0d17300.jpg",
+    "static/media/콰트로머쉬룸불고기피자.jpg": "/nomorepizza/static/media/콰트로머쉬룸불고기피자.02da2a430ea9192e6be1.jpg",
     "index.html": "/nomorepizza/index.html",
     "main.9ecf7817.css.map": "/nomorepizza/static/css/main.9ecf7817.css.map",
-    "main.d098ae6e.js.map": "/nomorepizza/static/js/main.d098ae6e.js.map",
+    "main.67ebcb8b.js.map": "/nomorepizza/static/js/main.67ebcb8b.js.map",
     "453.15317aba.chunk.js.map": "/nomorepizza/static/js/453.15317aba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9ecf7817.css",
-    "static/js/main.d098ae6e.js"
+    "static/js/main.67ebcb8b.js"
   ]
 }
