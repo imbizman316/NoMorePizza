@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/nomorepizza/static/css/main.9f14b7a9.css",
+    "main.css": "/nomorepizza/static/css/main.bf6a452f.css",
     "main.js": "/nomorepizza/static/js/main.9646b925.js",
     "static/js/453.15317aba.chunk.js": "/nomorepizza/static/js/453.15317aba.chunk.js",
     "static/media/옥수수새우피자.jpg": "/nomorepizza/static/media/옥수수새우피자.afc6e9558a942bebcaeb.jpg",
@@ -18,12 +18,12 @@
     "static/media/콰트로머쉬룸불고기피자.jpg": "/nomorepizza/static/media/콰트로머쉬룸불고기피자.02da2a430ea9192e6be1.jpg",
     "static/media/logo.png": "/nomorepizza/static/media/logo.e6d44eea928fb7379d3e.png",
     "index.html": "/nomorepizza/index.html",
-    "main.9f14b7a9.css.map": "/nomorepizza/static/css/main.9f14b7a9.css.map",
+    "main.bf6a452f.css.map": "/nomorepizza/static/css/main.bf6a452f.css.map",
     "main.9646b925.js.map": "/nomorepizza/static/js/main.9646b925.js.map",
     "453.15317aba.chunk.js.map": "/nomorepizza/static/js/453.15317aba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f14b7a9.css",
+    "static/css/main.bf6a452f.css",
     "static/js/main.9646b925.js"
   ]
 }
