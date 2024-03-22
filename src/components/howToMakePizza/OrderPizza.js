@@ -1,3 +1,4 @@
+import logo from '../images/logo.png'
 import Data from "../../Menu";
 import React from "react";
 import Receipt from "../Receipt";
@@ -24,10 +25,11 @@ export default function OrderPizza() {
     {id: 3, size:"P"},
   ]
 
-  const toppingData = [
+  const toppingData = [    
     {id: 1, title: '통치즈크러스트'},
     {id: 2, title: '고구마엣지'},    
-    {id: 3, title: '리치골드'},
+    {id: 3, title: '리치골드'},    
+    {id: 4, title: '토핑추가안함'},
   ]
 
   const [menuData, setMenuData] = React.useState([])
@@ -55,6 +57,8 @@ export default function OrderPizza() {
   const [getPlate, setGetPlate] = React.useState(false)
   const [applyOil, setApplyOil] = React.useState(false)
   const [getDough, setGetDough] = React.useState(false)
+  const [actualDough, setActualDough] = React.useState(null)
+
   const [powderDough, setPowderDough] = React.useState(false)
   const [kneadDough, setKneadDough] = React.useState(false)  
 
@@ -188,6 +192,7 @@ export default function OrderPizza() {
   return (
     <div className="root">
       <OrderMain 
+        logo={logo}
         type={type}
         setType={setType}
         typeConfirmed={typeConfirmed}
@@ -222,6 +227,9 @@ export default function OrderPizza() {
       {
         sideConfirmed && !daughReady &&
         <Dough 
+
+        setSideConfirmed={setSideConfirmed}
+
         isSauce={isSauce}
         isSauce2={isSauce2}
 
@@ -249,10 +257,16 @@ export default function OrderPizza() {
 
         getPlate={getPlate}
         setGetPlate={setGetPlate}
+
         applyOil={applyOil}
         setApplyOil={setApplyOil}
+
         getDough={getDough}
         setGetDough={setGetDough}
+
+        actualDough={actualDough}
+        setActualDough={setActualDough  }
+
         powderDough={powderDough}
         setPowderDough={setPowderDough}
         kneadDough={kneadDough}
@@ -274,6 +288,7 @@ export default function OrderPizza() {
         highlight={highlight}
         highlightIngredients={highlightIngredients}
         menu={Data}
+        setDaughReady={setDaughReady}
         />
       }
       

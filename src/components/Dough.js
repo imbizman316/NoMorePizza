@@ -1,6 +1,6 @@
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
-export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, isHole, setIsHole, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize,getPlate,setGetPlate,applyOil,setApplyOil,getDough,setGetDough,  powderDough,setPowderDough,kneadDough,setKneadDough,getDoughSize, setGetDoughSize,handleGetDough,sauceDone,setSauceDone, setDaughReady}) {          
+export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, isHole, setIsHole, handleSauce2, isLongCheese, handleIsLongCheese, handleIsSize, isSize,getPlate,setGetPlate,applyOil,setApplyOil,getDough,setGetDough,  powderDough,setPowderDough,kneadDough,setKneadDough,getDoughSize, setGetDoughSize,handleGetDough,sauceDone,setSauceDone, setDaughReady, actualDough, setActualDough, setSideConfirmed}) {          
 
   function handleNext() {
     if (isSize !== null) {
@@ -9,11 +9,13 @@ export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, 
     if (getPlate && isOil ) {
       setApplyOil(true)
     }
-    if (applyOil && getDoughSize !== null) {
+    if (applyOil && getDough !== null) {
       setGetDough(true)
     }
 
-    if (getDough) {
+    // getDough && !powderDough
+
+    if (getDough && actualDough !== null) {
       setPowderDough(true)
     }
 
@@ -106,7 +108,10 @@ export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, 
         </div>
       </div>       
       </div>
-      <button onClick={handleNext}>다음</button>
+      <div>
+        <button onClick={()=>setSideConfirmed(false)}>이전</button>
+        <button onClick={handleNext}>다음</button>
+      </div>
     </div>
   )
 }

@@ -1,14 +1,11 @@
-import 치즈피자 from './images/치즈피자.jpg'
-import 옥수수새우피자 from './images/옥수수새우피자.jpg'
-
-
-export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, sidemenu, setSidemenu, sidemenuData, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2,menu2Confirmed,setMenu2Confirmed, toppingData,extraTopping,setExtraTopping,extraToppingConfirmed, setExtraToppingConfirmed,sideConfirmed, setSideConfirmed}) {  
-
-  const images = [치즈피자, 옥수수새우피자]
+export default function OrderMain({type, setType, typeData, setSize, size, sizeData, setMenu1, menuData, setMenu2, sidemenu, setSidemenu, sidemenuData, typeConfirmed, setTypeConfirmed, sizeConfirmed, setSizeConfirmed, menu1,menu1Confirmed,setMenu1Confirmed,menu2,menu2Confirmed,setMenu2Confirmed, toppingData,extraTopping,setExtraTopping,extraToppingConfirmed, setExtraToppingConfirmed,sideConfirmed, setSideConfirmed, logo}) {    
 
   return (
-    <div>      
-      <h2 style={{textAlign:"center"}}>No More Pizza - Mokdong</h2>
+    <div>
+      <div className="header">
+        <img src={logo} alt="logo" className="logo"/>
+        <h2 style={{textAlign:"center"}}>No More Pizza - Mokdong</h2>
+      </div>      
       {
         !typeConfirmed &&
         <div className="stage">
@@ -28,7 +25,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
               })
             }
             </div>
-            <button onClick={()=>setTypeConfirmed(true)}>다음</button>
+            <button onClick={()=>type !== null && setTypeConfirmed(true)}>다음</button>
         </div>
       }
       {
@@ -50,14 +47,17 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
               })
             }
         </div>
-        <button onClick={()=>setSizeConfirmed(true)}>다음</button>
+        <div>
+          <button onClick={()=>setTypeConfirmed(false)}>이전</button>
+          <button onClick={()=>size !== null && setSizeConfirmed(true)}>다음</button>
+        </div>
       </div> 
       }
 
       {sizeConfirmed && !menu1Confirmed && !menu2Confirmed && 
       <div className='menu_top'>
       <div className='menu_two'>
-      <div className="stage_menu">
+      <div className="stage_menu" style={{borderRight: "1px solid black"}}>
         <h3>피자1의 종류를 선택해주세요.</h3>
 
         <div className="option_board_menu">
@@ -132,16 +132,19 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
       
       }      
     </div> 
-    <button onClick={()=>{
-      if (menu1 !== null && menu2 !== null && type==="반반") {
-        setMenu1Confirmed(true);
-        setMenu2Confirmed(true);
-      } else if (menu1 !== null && type==="한판"){
-        setMenu1Confirmed(true);
-        setMenu2Confirmed(true);
-      }
-      
-      }}>다음</button>
+    <div>
+      <button onClick={()=>setSizeConfirmed(false)}>이전</button>
+      <button onClick={()=>{
+        if (menu1 !== null && menu2 !== null && type==="반반") {
+          setMenu1Confirmed(true);
+          setMenu2Confirmed(true);
+        } else if (menu1 !== null && type==="한판"){
+          setMenu1Confirmed(true);
+          setMenu2Confirmed(true);
+        }
+        
+        }}>다음</button>
+    </div>
     </div>
   }
         
@@ -166,7 +169,13 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
           })
         }        
         </div>
-        <button onClick={()=>setExtraToppingConfirmed(true)}>다음</button>
+        <div>
+          <button onClick={()=>{         
+            setMenu1Confirmed(false);
+            setMenu2Confirmed(false);
+          }}>이전</button>
+          <button onClick={()=>extraTopping !== null && setExtraToppingConfirmed(true)}>다음</button>
+        </div>
       </div>
     }
 
@@ -191,8 +200,11 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
             )
           })
         }
-        </div>                
-        <button onClick={()=>setSideConfirmed(true)}>다음</button>
+        </div>                        
+        <div>
+          <button onClick={()=> setExtraToppingConfirmed(false)}>이전</button>
+          <button onClick={()=>sidemenu !== null && setSideConfirmed(true)}>다음</button>
+        </div>
       </div>}
         {/* <div>
           <input type="number" min="1" value={count} onChange={(e)=>{setCount(e.target.value.length > 0 && parseInt(e.target.value))}}></input>

@@ -1,4 +1,4 @@
-export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven, menu1, menu2, sidemenu, highlightIngredients,highlight, menu}) {
+export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven, menu1, menu2, sidemenu, highlightIngredients,highlight, menu, setDaughReady}) {
 
   const isSelectedList = []
 
@@ -225,6 +225,13 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
               border: targetMenu.includes("통옥수수") && highlight && "3px solid red",}}
             >통옥수수</div>  
         </div>        
+        <div className="box">
+          <div
+              onClick={(e) => checkSteps(e.target.innerText)}
+              style={{backgroundColor: isSelectedList.includes("할라피뇨") && "pink",
+              border: targetMenu.includes("할라피뇨") && highlight && "3px solid red",}}
+            >할라피뇨</div>  
+        </div>        
       </div>
       <div className="edge_cheese"
         onClick={(e) => checkSteps(e.target.innerText)}
@@ -233,7 +240,10 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
       >
         엣지치즈
       </div>
-      <button onClick={()=>checkIfReadyForOven(isSelectedList)}>다음</button>
+      <div>      
+        <button onClick={()=>setDaughReady(false)}>이전</button>
+        <button onClick={()=>checkIfReadyForOven(isSelectedList)}>다음</button>
+      </div>
     </div>
   )
 }

@@ -139,6 +139,11 @@ const IngredientData = [
     title: "엣지치즈",
     isSelected: false,
   },  
+  {
+    id: 29,
+    title: "할라피뇨",
+    isSelected: false,
+  },  
 ]
 
 export default IngredientData
