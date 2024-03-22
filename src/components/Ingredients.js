@@ -240,7 +240,7 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
       >
         엣지치즈
       </div>
-      <div>      
+      <div className="button_container">      
         <button onClick={()=>setDaughReady(false)}>이전</button>
         <button onClick={()=>checkIfReadyForOven(isSelectedList)}>다음</button>
       </div>

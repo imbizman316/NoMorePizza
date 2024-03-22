@@ -25,7 +25,10 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
               })
             }
             </div>
-            <button onClick={()=>type !== null && setTypeConfirmed(true)}>다음</button>
+            <div className="button_container">
+              <div></div>
+              <button onClick={()=>type !== null && setTypeConfirmed(true)}>다음</button>
+            </div>
         </div>
       }
       {
@@ -47,7 +50,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
               })
             }
         </div>
-        <div>
+        <div className="button_container">
           <button onClick={()=>setTypeConfirmed(false)}>이전</button>
           <button onClick={()=>size !== null && setSizeConfirmed(true)}>다음</button>
         </div>
@@ -132,7 +135,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
       
       }      
     </div> 
-    <div>
+    <div className="button_container">
       <button onClick={()=>setSizeConfirmed(false)}>이전</button>
       <button onClick={()=>{
         if (menu1 !== null && menu2 !== null && type==="반반") {
@@ -169,7 +172,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
           })
         }        
         </div>
-        <div>
+        <div className="button_container">
           <button onClick={()=>{         
             setMenu1Confirmed(false);
             setMenu2Confirmed(false);
@@ -201,7 +204,7 @@ export default function OrderMain({type, setType, typeData, setSize, size, sizeD
           })
         }
         </div>                        
-        <div>
+        <div className="button_container">
           <button onClick={()=> setExtraToppingConfirmed(false)}>이전</button>
           <button onClick={()=>sidemenu !== null && setSideConfirmed(true)}>다음</button>
         </div>

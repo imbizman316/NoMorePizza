@@ -108,7 +108,7 @@ export default function Dough({isSauce, handleSauce, isSauce2, isOil, setIsOil, 
         </div>
       </div>       
       </div>
-      <div>
+      <div className="button_container">      
         <button onClick={()=>setSideConfirmed(false)}>이전</button>
         <button onClick={handleNext}>다음</button>
       </div>
