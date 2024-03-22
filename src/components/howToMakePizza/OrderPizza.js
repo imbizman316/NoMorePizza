@@ -73,6 +73,7 @@ export default function OrderPizza() {
   const [getDoughSize, setGetDoughSize] = React.useState(null)
 
   const [isHole, setIsHole] = React.useState(false)
+  const [holeDone, setHoleDone] = React.useState(false)
 
   const [sauceDone, setSauceDone] = React.useState(false)
 
@@ -84,6 +85,8 @@ export default function OrderPizza() {
   const [readyForOven, SetReadyForOven] = React.useState(false)
 
   const [highlight, setHighlight] = React.useState(false)  
+
+  const [kneadDone, setKneadDone] = React.useState(false)
 
   React.useEffect(()=>{
     setMenuData(Data)
@@ -112,6 +115,11 @@ export default function OrderPizza() {
       }
     })
   }
+
+  function handleSetHoleDone() {
+    setHoleDone(!holeDone)
+  }
+
 
   function handleSauce2() {
 
@@ -329,6 +337,13 @@ export default function OrderPizza() {
         kneadDough={kneadDough}
         setKneadDough={setKneadDough}
         setDaughReady={setDaughReady}
+
+        kneadDone={kneadDone}
+        setKneadDone={setKneadDone}
+
+        holeDone={holeDone}
+        setHoldDone={setHoleDone}
+        handleSetHoleDone={handleSetHoleDone}
 
         />
       }        

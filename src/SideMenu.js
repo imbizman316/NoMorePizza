@@ -23,6 +23,11 @@ const SideMenu = [
     id:5,
     title: "마라로제파스타",
     ingredients: ["스파게티면","로제소스","마라소스믹스","치즈","분쇄비프","청/홍피망","고추기름"]
+  },
+  {
+    id:6,
+    title: "사이드없음",
+    ingredients: []
   }
 ]
 

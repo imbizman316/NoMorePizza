@@ -27,8 +27,10 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           onClick={()=>highlightIngredients()}
         >?</h3>
       </div>
+
       <div className="ingredients_boxes">
         <div className="box">
+
           <div            
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{
@@ -36,13 +38,16 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
               border: targetMenu.includes("파인애플") && highlight && "3px solid red",
             }}
           >파인애플</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("고구마다이스") && "pink",
             border: targetMenu.includes("고구마다이스") && highlight && "3px solid red",
           }}
           >고구마다이스</div>
+
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
@@ -50,12 +55,14 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
             border: targetMenu.includes("웻지감자") && highlight && "3px solid red",
           }}
           >웻지감자</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("바베큐불고기") && "pink",
             border: targetMenu.includes("바베큐불고기") && highlight && "3px solid red",
           }}
           >바베큐불고기</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("썬드라이치즈") && "pink",
@@ -63,6 +70,7 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >썬드라이치즈</div>          
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
@@ -71,13 +79,15 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >치즈</div>          
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("뇨끼") && "pink",
             border: targetMenu.includes("뇨끼") && highlight && "3px solid red",
           }}
-          >뇨끼</div>          
+          >뇨끼</div> 
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("바질치즈") && "pink",
@@ -85,13 +95,15 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >바질치즈</div>          
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("페퍼로니") && "pink",
             border: targetMenu.includes("페퍼로니") && highlight && "3px solid red",
           }}
-          >페퍼로니</div>          
+          >페퍼로니</div> 
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("분쇄비프") && "pink",
@@ -99,13 +111,15 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >분쇄비프</div>          
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("깐양파") && "pink",
             border: targetMenu.includes("깐양파") && highlight && "3px solid red",
           }}
-          >깐양파</div>          
+          >깐양파</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("시즈닝새우") && "pink",
@@ -113,6 +127,7 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >시즈닝새우</div>          
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
@@ -120,12 +135,14 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
             border: targetMenu.includes("베이컨줄") && highlight && "3px solid red",
           }}
           >베이컨줄</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("베이컨조각") && "pink",
             border: targetMenu.includes("베이컨조각") && highlight && "3px solid red",
           }}
           >베이컨조각</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("스위트콘") && "pink",
@@ -133,6 +150,7 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >스위트콘</div>          
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
@@ -141,13 +159,15 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >치즈</div>  
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("에멘탈슈레드") && "pink",
             border: targetMenu.includes("에멘탈슈레드") && highlight && "3px solid red",
           }}
-          >에멘탈슈레드</div>  
+          >에멘탈슈레드</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("체다치즈") && "pink",
@@ -155,19 +175,22 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >체다치즈</div>  
         </div>
+
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("블랙올리브") && "pink",
             border: targetMenu.includes("블랙올리브") && highlight && "3px solid red",
           }}
-          >블랙올리브</div>  
+          >블랙올리브</div> 
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("버섯4종") && "pink",
             border: targetMenu.includes("버섯4종") && highlight && "3px solid red",
           }}
           >버섯4종</div>
+
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
             style={{backgroundColor: isSelectedList.includes("청/홍피망") && "pink",
@@ -175,6 +198,7 @@ export default function Ingredients({checkSteps, ingredients,checkIfReadyForOven
           }}
           >청/홍피망</div>  
         </div>
+        
         <div className="box">
           <div
             onClick={(e) => checkSteps(e.target.innerText)}
