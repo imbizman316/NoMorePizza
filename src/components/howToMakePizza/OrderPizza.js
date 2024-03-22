@@ -189,6 +189,63 @@ export default function OrderPizza() {
     setHighlight(!highlight)
   }
 
+  function resetAll() {
+    
+    setIngredient(IngredientData)
+  
+    setType(null)
+    setTypeConfirmed(false)
+  
+    setSize(null)
+    setSizeConfirmed(false)
+  
+    setMenu1(null)
+    setMenu1Confirmed(false)
+  
+    setMenu2(null)
+    setMenu2Confirmed(false)
+  
+    setExtraTopping(null)
+    setExtraToppingConfirmed(false)
+  
+    setSidemenu(null)
+    setSideConfirmed(false)
+  
+    //------------------------------------------//
+    setGetPlate(false)
+    setApplyOil(false)
+    setGetDough(false)
+    setActualDough(null)
+  
+    setPowderDough(false)
+    setKneadDough(false)  
+  
+    setCount(1)  
+  
+    //-----------------------Assemble-----------------------
+    setIsSauce(false)
+    setIsSauce2(false)
+  
+    setIsOil(false)
+    
+    setGetDoughSize(null)
+  
+    setIsHole(false)
+  
+    setSauceDone(false)
+  
+    setIsLongCheese(false)
+    setIsSize(null)
+  
+    setDaughReady(false)
+  
+    SetReadyForOven(false)
+  
+    setHighlight(false)  
+
+
+  }
+
   return (
     <div className="root">
       <OrderMain 
@@ -293,8 +350,7 @@ export default function OrderPizza() {
       }
       
       {readyForOven && <Oven
-          
-      
+        resetAll={resetAll}                
       />}
       
 
